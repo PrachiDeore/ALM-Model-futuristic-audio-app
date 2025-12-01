@@ -17,6 +17,27 @@ from typing import Tuple, List, Dict
 import re
 from datetime import datetime
 
+# ------------------------------
+# 🌗 DARK / LIGHT MODE TOGGLE
+# ------------------------------
+import streamlit as st
+
+# Sidebar theme toggle
+theme_choice = st.sidebar.toggle("🌗 Dark / Light Mode", value=True)
+
+# Apply selected theme
+if theme_choice:
+    st._config.set_option("theme.base", "dark")
+    st._config.set_option("theme.backgroundColor", "#0E1117")
+    st._config.set_option("theme.primaryColor", "#4C71F0")
+    st._config.set_option("theme.textColor", "#FFFFFF")
+else:
+    st._config.set_option("theme.base", "light")
+    st._config.set_option("theme.backgroundColor", "#FFFFFF")
+    st._config.set_option("theme.primaryColor", "#4C71F0")
+    st._config.set_option("theme.textColor", "#000000")
+
+
 # Try to set torchaudio backend to soundfile
 try:
     torchaudio.utils.set_audio_backend("soundfile")
