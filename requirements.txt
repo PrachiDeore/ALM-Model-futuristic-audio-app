@@ -1,0 +1,13 @@
+torch>=2.0
+torchaudio
+transformers>=4.30
+datasets
+soundfile
+librosa
+pydub
+scipy
+numpy
+pyyaml
+faiss-cpu         # optional for retrieval
+jiwer             # for WER
+webrtcvad         # optional VAD
